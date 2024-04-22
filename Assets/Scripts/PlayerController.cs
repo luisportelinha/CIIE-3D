@@ -12,6 +12,15 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public Rigidbody rb; 
+    public float jumpHeight = 1.5f;
+
+    public Transform groundCheck; 
+    public float groundDistance = 0.1f;
+    public LayerMask groundMask;
+
+    bool isGrounded;
+    bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +40,51 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("VelX", x);
         animator.SetFloat("VelY", y);
+        /* 
+         * 
+         * NUEVAS ANIMACIONES CON OTRAS TECLAS
+         * 
+         * 
+        if (Input.GetKey("TECLA"))
+        {
+            animator.SetBool("other", false);
+            animator.Play("ACCION TECLA");
+        }
+        if (Input.GetKey("TECLA"))
+        { 
+            animator.SetBool("other", false);
+            animator.Play("ACCION TECLA");
+        }*/
+        if(x>0 || x<0 || y>0 || y < 0)
+        {
+            animator.SetBool("other", true);
+        }
 
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if (Input.GetKey("space") && isGrounded && canJump)
+        {
+            animator.Play("Jump");
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            canJump = false; // Set the flag to false to prevent immediate subsequent jumps
+            Invoke("ResetJumpCooldown", 1f); // Schedule resetting the flag after 1 second
+        }
+        /*
+        if (isGrounded && Input.GetKey("f")) 
+        {
+            animator.SetBool("other", false);
+            animator.Play("BigJump"); 
+            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        }*/
     }
+
+    void ResetJumpCooldown()
+    {
+        canJump = true; // Reset the flag to allow jumping again
+    }
+    public void Jumpp()
+    {
+        rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+    }
+
 }
