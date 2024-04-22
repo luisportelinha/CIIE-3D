@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1.5f;
 
     public Transform groundCheck; 
-    public float groundDistance = 0.1f;
+    public float groundDistance = 0.3f;
     public LayerMask groundMask;
 
     bool isGrounded;
