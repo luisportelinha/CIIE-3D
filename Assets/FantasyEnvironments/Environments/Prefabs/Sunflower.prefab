@@ -13,16 +13,28 @@ PrefabInstance:
       value: Sunflower
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.32118
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.32118
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.32118
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.038437
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.94792
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.032113
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c4a1bcc0d2dcbe3499db2f60eff9523f, type: 3}
       propertyPath: m_LocalRotation.w

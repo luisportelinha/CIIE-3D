@@ -13,16 +13,28 @@ PrefabInstance:
       value: Flower1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.34239
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14727563
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2757376
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.00080278
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.40522
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.0058301
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b2cda8a1e050e478497f2213c37e99, type: 3}
       propertyPath: m_LocalRotation.w
