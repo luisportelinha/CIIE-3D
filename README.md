@@ -14,6 +14,8 @@ https://www.mixamo.com/#/?page=1&query=idle&type=Motion%2CMotionPack -> (idle)
 https://www.mixamo.com/#/?page=1&query=running&type=Motion%2CMotionPack -> (running)
 https://www.mixamo.com/#/?page=1&query=left&type=Motion%2CMotionPack  -> (left strafe walk)
 
+Camera motion player level 1 -> Cinemachine package
+
 Agua:
 https://assetstore.unity.com/packages/vfx/shaders/aquas-lite-built-in-render-pipeline-53519 
 

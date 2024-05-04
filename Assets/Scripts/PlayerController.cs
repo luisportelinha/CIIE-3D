@@ -69,13 +69,6 @@ public class PlayerController : MonoBehaviour
             canJump = false; // Set the flag to false to prevent immediate subsequent jumps
             Invoke("ResetJumpCooldown", 1f); // Schedule resetting the flag after 1 second
         }
-        /*
-        if (isGrounded && Input.GetKey("f")) 
-        {
-            animator.SetBool("other", false);
-            animator.Play("BigJump"); 
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-        }*/
     }
 
     void ResetJumpCooldown()
