@@ -6,6 +6,9 @@ TagManager:
   tags:
   - opciones
   - Door
+  - lb_perchTarget
+  - is_ground
+  - is_wall
   layers:
   - Default
   - TransparentFX

@@ -1173,6 +1173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1
       objectReference: {fileID: 0}
+    - target: {fileID: 1562119382739742, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
+      propertyPath: m_TagString
+      value: is_ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 653.5224
@@ -1300,7 +1304,7 @@ GameObject:
   - component: {fileID: 845846065}
   m_Layer: 6
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: is_ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1389,8 +1393,9 @@ GameObject:
   m_Component:
   - component: {fileID: 995429874}
   - component: {fileID: 995429873}
+  - component: {fileID: 995429875}
   m_Layer: 0
-  m_Name: FreeLook Camera
+  m_Name: ThirdPersonCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1519,6 +1524,36 @@ Transform:
   - {fileID: 1815670398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 240, z: 0}
+--- !u!114 &995429875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995429872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 65
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1 &1192421793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,7 +2107,7 @@ MonoBehaviour:
   orientation: {fileID: 1416251453}
   player: {fileID: 1584183842}
   playerObj: {fileID: 82331528}
-  rb: {fileID: 82331528}
+  rb: {fileID: 1584183842}
 --- !u!1 &1609184398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,6 +2446,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenHouse_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1890650327710218, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
+      propertyPath: m_TagString
+      value: is_wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4071310993976328, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.752
@@ -2689,7 +2728,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1584183842}
-  m_LocalEulerAnglesHint: {x: 24.481, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2034595736
 MonoBehaviour:
   m_ObjectHideFlags: 0
