@@ -1,3 +1,6 @@
+https://www.overleaf.com/3714393561rtrbjdgmrfch#b0aa31
+
+
 Assets usados por el momento:
 Terreno:
 https://docs.unity3d.com/Packages/com.unity.terrain-tools@4.0/manual/index.html
