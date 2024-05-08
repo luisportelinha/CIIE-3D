@@ -13,6 +13,18 @@ PrefabInstance:
       value: Grass3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce04673c170c7494ab173abe6de6ae74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4356474
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: ce04673c170c7494ab173abe6de6ae74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: ce04673c170c7494ab173abe6de6ae74, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2408
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: ce04673c170c7494ab173abe6de6ae74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}

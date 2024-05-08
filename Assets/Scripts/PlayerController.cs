@@ -22,10 +22,14 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
     bool canJump = true;
 
+    LayerMask mask;
+    public float distancia = 3f;
+    public float radioApertura = 2f; // Radio de apertura de las puertas
+
     // Start is called before the first frame update
     void Start()
     {
-       // player = GetComponent<CharacterController>();
+        mask = LayerMask.GetMask("RayCast");
     }
 
     // Update is called once per frame
@@ -68,6 +72,22 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             canJump = false; // Set the flag to false to prevent immediate subsequent jumps
             Invoke("ResetJumpCooldown", 1f); // Schedule resetting the flag after 1 second
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Detectar todas las puertas dentro del radio de apertura
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radioApertura, mask);
+
+            // Iterar sobre las puertas detectadas
+            foreach (Collider doorCollider in hitColliders)
+            {
+                if (doorCollider.CompareTag("Door"))
+                {
+                    // Cambiar el estado de la puerta
+                    doorCollider.GetComponent<RotateDoor>().changeDoorState();
+                }
+            }
         }
     }
 

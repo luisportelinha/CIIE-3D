@@ -290,15 +290,15 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    terrainQualityOverrides: 0
+    terrainQualityOverrides: 64
     terrainPixelError: 1
     terrainDetailDensityScale: 1
     terrainBasemapDistance: 1000
     terrainDetailDistance: 80
-    terrainTreeDistance: 5000
+    terrainTreeDistance: 152
     terrainBillboardStart: 50
-    terrainFadeLength: 5
-    terrainMaxTrees: 50
+    terrainFadeLength: 200
+    terrainMaxTrees: 1069
     excludedTargetPlatforms: []
   m_TextureMipmapLimitGroupNames: []
   m_PerPlatformDefaultQuality:

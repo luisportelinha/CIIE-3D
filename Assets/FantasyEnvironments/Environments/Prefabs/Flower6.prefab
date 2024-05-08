@@ -13,8 +13,16 @@ PrefabInstance:
       value: Flower6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3b2b524322e653499cbd89dda5dcbc3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6664
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3b2b524322e653499cbd89dda5dcbc3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6805
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: a3b2b524322e653499cbd89dda5dcbc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0989
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a3b2b524322e653499cbd89dda5dcbc3, type: 3}
       propertyPath: m_LocalPosition.y
