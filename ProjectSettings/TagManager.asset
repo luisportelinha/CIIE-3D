@@ -11,6 +11,7 @@ TagManager:
   - is_wall
   - Enemy
   - Bullet
+  - FinalDoor
   layers:
   - Default
   - TransparentFX

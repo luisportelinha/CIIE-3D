@@ -118,6 +118,12 @@ public class PlayerController : MonoBehaviour
                     // Cambiar el estado de la puerta
                     doorCollider.GetComponent<RotateDoor>().changeDoorState();
                 }
+
+                if (doorCollider.CompareTag("FinalDoor"))
+                {
+                    // Cambiar el estado de la puerta
+                    doorCollider.GetComponent<RiseFinalDoor>().changeDoorState();
+                }
             }
         }
 
