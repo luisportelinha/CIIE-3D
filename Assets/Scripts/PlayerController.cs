@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public int health, regen;
     int maxHealth;
     bool fighting;
+    bool isTakingDamage;
     public SimpleHealthBar energyBar;
     public SimpleHealthBar healthBar;
 
@@ -127,6 +128,56 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if ((other.CompareTag("Damagexs10") || other.CompareTag("Damage10") || other.CompareTag("Damagexs40")) && !isTakingDamage)
+        {
+            StartCoroutine(TakeDamageOverTime(other));
+        }
+
+        if (other.CompareTag("Damage10"))
+        {
+            health -= 10;
+            healthBar.UpdateBar(health, maxHealth);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Damagexs10"))
+        {
+            StopCoroutine(TakeDamageOverTime(other));
+            isTakingDamage = false;
+        }
+
+        if (other.CompareTag("Damagexs40"))
+        {
+            StopCoroutine(TakeDamageOverTime(other));
+            isTakingDamage = false;
+        }
+    }
+
+    IEnumerator TakeDamageOverTime(Collider other)
+    {
+        isTakingDamage = true;
+        while (isTakingDamage)
+        {
+            if (other.CompareTag("Damagexs10"))
+            {
+                health -= 10;
+                healthBar.UpdateBar(health, maxHealth);
+            }
+
+            if (other.CompareTag("Damagexs40"))
+            {
+                health -= 40;
+                healthBar.UpdateBar(health, maxHealth);
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     private void EnergyManager()

@@ -12,6 +12,10 @@ TagManager:
   - Enemy
   - Bullet
   - FinalDoor
+  - SkyboxCamera
+  - Damage10
+  - Damagexs10
+  - Damagexs40
   layers:
   - Default
   - TransparentFX
