@@ -1,76 +1,107 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
-    private float x, y;
-
-    private float runSpeed = 7;
-    private float rotationSpeed = 250;
-
+    public Transform playerCam;
+    public Transform orientation;
+    Rigidbody rb;
     public Animator animator;
 
-    public Rigidbody rb; 
-    public float jumpHeight = 1.5f;
+    [Header("Movement")]
+    public bool lockLook;
+    private float xRotation;
+    private float sensitivity = 50f;
+    private float sensMultiplier = 1f;
 
-    public Transform groundCheck; 
-    public float groundDistance = 0.3f;
-    public LayerMask groundMask;
 
-    bool isGrounded;
-    bool canJump = true;
+    public float energy, energyRegen;
+    public int health, regen;
+    int maxHealth;
+    bool fighting;
+    public SimpleHealthBar energyBar;
+    public SimpleHealthBar healthBar;
 
-    LayerMask mask;
-    public float distancia = 3f;
+    public Vector3 inputVector;
+    public float moveSpeed;
+    public float baseSpeed = 20;
+    private float startBaseSpeed;
+
+    public float groundDrag;
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump;
+
+
+    [HideInInspector] public float walkSpeed;
+    [HideInInspector] public float sprintSpeed;
+
+
+    [Header("Keybinds")]
+    public KeyCode jumpKey = KeyCode.Space;
+
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask whatIsGround;
+    bool grounded;
+
+    float horizontalInput;
+    float verticalInput;
+    public float x, y;
+    bool sprinting;
+    //air control
+    public float airForwardForce;
+
+    Vector3 moveDirection;
+
     public float radioApertura = 2f; // Radio de apertura de las puertas
+    LayerMask mask;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        mask = LayerMask.GetMask("RayCast");
+        rb = GetComponent<Rigidbody>();
+        startBaseSpeed = baseSpeed;
+        maxHealth = health;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-        
-        transform.Rotate(0, x * Time.deltaTime * rotationSpeed, 0);
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
 
-        transform.Translate(0, 0, y * Time.deltaTime * runSpeed);
+        readyToJump = true;
+    }
 
-        animator.SetFloat("VelX", x);
-        animator.SetFloat("VelY", y);
-        /* 
-         * 
-         * NUEVAS ANIMACIONES CON OTRAS TECLAS
-         * 
-         * 
-        if (Input.GetKey("TECLA"))
-        {
-            animator.SetBool("other", false);
-            animator.Play("ACCION TECLA");
-        }
-        if (Input.GetKey("TECLA"))
-        { 
-            animator.SetBool("other", false);
-            animator.Play("ACCION TECLA");
-        }*/
-        if(x>0 || x<0 || y>0 || y < 0)
-        {
-            animator.SetBool("other", true);
-        }
+    private void Update()
+    {
+        // ground check
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        MyInput();
+        //if (!lockLook) Look();
+        SpeedControl();
 
-        if (Input.GetKey("space") && isGrounded && canJump)
+        // handle drag
+        if (grounded)
+            rb.drag = groundDrag;
+        else
+            rb.drag = 0;
+
+
+        animator.SetFloat("VelX", Input.GetAxis("Horizontal"));
+        animator.SetFloat("VelY", Input.GetAxis("Vertical"));
+
+        if (Input.GetKey("space") && grounded && readyToJump)
         {
             animator.Play("Jump");
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            canJump = false; // Set the flag to false to prevent immediate subsequent jumps
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            readyToJump = false; // Set the flag to false to prevent immediate subsequent jumps
+            EnergyManager();
             Invoke("ResetJumpCooldown", 1f); // Schedule resetting the flag after 1 second
         }
 
@@ -89,15 +120,92 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
     }
 
-    void ResetJumpCooldown()
+    private void EnergyManager()
     {
-        canJump = true; // Reset the flag to allow jumping again
+        if (energy > 0)
+            energy -= Time.deltaTime * 15;
+
+        energyBar.UpdateBar(energy, 100f);
     }
-    public void Jumpp()
+    private void FixedUpdate()
     {
-        rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+        MovePlayer();
+    }
+    /*
+    private void Look()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
+
+        //Find current look rotation
+        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
+        float desiredX = rot.y + mouseX;
+
+        //Rotate, and also make sure we dont over- or under-rotate.
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        //Perform the rotations
+        orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
+    }*/
+    private void MyInput()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+
+        // when to jump
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        {
+            readyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
     }
 
+    private void MovePlayer()
+    {
+        // calculate movement direction
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
+        // on ground
+        if (grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        // in air
+        else if (!grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        // limit velocity if needed
+        if (flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    private void Jump()
+    {
+        // reset y velocity
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+    private void ResetJump()
+    {
+        readyToJump = true;
+    }
+
+    public void DashInDirection(Vector3 dir, float force)
+    {
+        rb.AddForce(dir * force, ForceMode.Impulse);
+    }
 }

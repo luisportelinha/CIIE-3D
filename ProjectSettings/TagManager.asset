@@ -9,6 +9,8 @@ TagManager:
   - lb_perchTarget
   - is_ground
   - is_wall
+  - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
