@@ -22,4 +22,7 @@ Camera motion player level 1 -> Cinemachine package
 Agua:
 https://assetstore.unity.com/packages/vfx/shaders/aquas-lite-built-in-render-pipeline-53519 
 
+Partículas: https://assetstore.unity.com/packages/vfx/particles/legacy-particle-pack-73777
+Dungeons: https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535
+
 el ultimo aun no esta metido pero vaya no tiene mala pinta
