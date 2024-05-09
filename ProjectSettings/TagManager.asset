@@ -19,6 +19,7 @@ TagManager:
   - Portal
   - bullet
   - weapon
+  - Brillo
   layers:
   - Default
   - TransparentFX

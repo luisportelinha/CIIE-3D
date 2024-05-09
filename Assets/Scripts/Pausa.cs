@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Pausa : MonoBehaviour
 {
-    public GameController gameController;
-    public AudioSource audioPausa;
+    public AudioSource fuenteAudio;
     public bool pausa = false;
+    public InstanceGC gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,7 @@ public class Pausa : MonoBehaviour
                 Time.timeScale = 0;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-                audioPausa.Pause();
+                fuenteAudio.Pause();
                 gameController.abrirPausa();
             }
             else
@@ -36,10 +36,22 @@ public class Pausa : MonoBehaviour
                 Time.timeScale = 1;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                audioPausa.UnPause();        
+                fuenteAudio.UnPause();        
+                if (gameController.estaEnOpciones()){
+                    gameController.cerrarOpciones();
+                }
                 gameController.cerrarPausa();     
             }
         }
         
+    }
+
+    public void volverMenuRestaurando()
+    {
+        Time.timeScale = 1;
+        pausa = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        gameController.CambiarEscena(0);
     }
 }

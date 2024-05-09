@@ -11,6 +11,7 @@ public class BrightnessControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panelBrillo = GameObject.Find("PanelBrillo").GetComponent<Image>();
         slider.value = PlayerPrefs.GetFloat("brillo", 0.5f);
         panelBrillo.color = new Color(panelBrillo.color.r, panelBrillo.color.g, panelBrillo.color.b, slider.value);
     }

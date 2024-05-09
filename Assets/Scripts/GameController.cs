@@ -5,6 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance { get; private set; }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,8 +63,18 @@ public class GameController : MonoBehaviour
         SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
     }
 
+    public bool estaEnOpciones()
+    {
+        return SceneManager.GetSceneByBuildIndex(4).isLoaded;
+    }
+
     public void cerrarPausa()
     {
         SceneManager.UnloadSceneAsync(5);
+    }
+
+    public void mensaje(string mensaje)
+    {
+        Debug.Log(mensaje);
     }
 }
