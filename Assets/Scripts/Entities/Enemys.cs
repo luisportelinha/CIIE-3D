@@ -22,7 +22,9 @@ public class Enemy : MonoBehaviour
     public float anguloAtaque = 15.0f;
     public int damage = 5;
     public int health = 100;
+    int currentHealth;
 
+    public HealthBar healthBar;
     public GameObject target;
     public NavMeshAgent agente;
 
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         target = GameObject.Find("Player");
+        currentHealth = health;
     }
 
     public void patrullar(){
@@ -117,9 +120,10 @@ public class Enemy : MonoBehaviour
     }
 
     public void TakeDamage(int amount){
-        health -= amount;
-        print($"Recibido {amount} de daño, salud restante: {health}");
-        if (health <= 0){
+        currentHealth -= amount;
+        healthBar.SetHealth(currentHealth);
+        print($"Recibido {amount} de daño, salud restante: {currentHealth}");
+        if (currentHealth <= 0){
             Die();
         }
     }

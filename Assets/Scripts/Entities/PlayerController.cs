@@ -19,14 +19,13 @@ public class PlayerController : MonoBehaviour
     private float sensMultiplier = 1f;
 
 
-    public float energy, energyRegen;
-    public int health, regen;
+    public float energy;
+    public int health, regen, currentHealth;
     int maxHealth;
     bool fighting;
     bool isTakingDamage;
-    public SimpleHealthBar energyBar;
-    public SimpleHealthBar healthBar;
 
+    public HealthBar healthBar;
     public Vector3 inputVector;
     public float moveSpeed;
     public float baseSpeed = 20;
@@ -75,6 +74,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startBaseSpeed = baseSpeed;
         maxHealth = health;
+        currentHealth = health;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Start()
@@ -109,7 +110,6 @@ public class PlayerController : MonoBehaviour
             animator.Play("Jump");
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             readyToJump = false; // Set the flag to false to prevent immediate subsequent jumps
-            EnergyManager();
             Invoke("ResetJumpCooldown", 1f); // Schedule resetting the flag after 1 second
         }
 
@@ -136,9 +136,10 @@ public class PlayerController : MonoBehaviour
     }
 
     public void TakeDamage(int amount){
-        health -= amount;
-        print($"Recibido {amount} de daño, salud restante: {health}");
-        if (health <= 0){
+        currentHealth -= amount;
+        healthBar.SetHealth(currentHealth);
+        print($"Recibido {amount} de daño, salud restante: {currentHealth}");
+        if (currentHealth <= 0){
             Die();
         }
     }
@@ -187,48 +188,24 @@ public class PlayerController : MonoBehaviour
         {
             if (other.CompareTag("Damagexs10"))
             {
-                health -= 10;
-                healthBar.UpdateBar(health, maxHealth);
+                currentHealth -= 10;
+                healthBar.SetHealth(currentHealth);
             }
 
             if (other.CompareTag("Damagexs40"))
             {
-                health -= 40;
-                healthBar.UpdateBar(health, maxHealth);
+                currentHealth -= 40;
+                healthBar.SetHealth(currentHealth);
             }
 
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    private void EnergyManager()
-    {
-        if (energy > 0)
-            energy -= Time.deltaTime * 15;
-
-        energyBar.UpdateBar(energy, 100f);
-    }
     private void FixedUpdate()
     {
         MovePlayer();
     }
-    /*
-    private void Look()
-    {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
-
-        //Find current look rotation
-        Vector3 rot = playerCam.transform.localRotation.eulerAngles;
-        float desiredX = rot.y + mouseX;
-
-        //Rotate, and also make sure we dont over- or under-rotate.
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        //Perform the rotations
-        orientation.transform.localRotation = Quaternion.Euler(0, desiredX, 0);
-    }*/
     private void MyInput()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");

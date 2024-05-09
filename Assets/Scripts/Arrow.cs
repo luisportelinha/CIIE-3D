@@ -24,7 +24,7 @@ public class Arrow : MonoBehaviour
     bool shooting, readyToShoot, reloading;
 
     public Camera fpsCam;
-    public GameObject muzzleFlash;
+    //public GameObject muzzleFlash;
     public Transform attackPoint;
 
     //Show bullet amount
@@ -98,7 +98,7 @@ public class Arrow : MonoBehaviour
         //Activate bullet
         if (currentBullet.GetComponent<CustomArrow>()) currentBullet.GetComponent<CustomArrow>().activated = true;
 
-        Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
+        //Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
 
         //Shake Camera
         //camShake.StartCoroutine(camShake.Shake(camShakeDuration, camShakeMagnitude));

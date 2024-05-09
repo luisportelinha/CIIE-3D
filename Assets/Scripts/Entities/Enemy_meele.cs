@@ -19,6 +19,7 @@ public class Enemy_meele : Enemy
         anguloAtaque = 45.0f;
         damage = 20;
         health = 200;
+        healthBar.SetMaxHealth(health);
     }
 
     protected override void atacar(){

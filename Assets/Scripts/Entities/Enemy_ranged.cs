@@ -22,7 +22,8 @@ public class Enemy_ranged : Enemy
         anguloAtaque = 15.0f;
         damage = 20;   
         lastAttackTime = 0;   
-        health = 75;   
+        health = 75;
+        healthBar.SetMaxHealth(health);
     }
 
     public void Shoot(){

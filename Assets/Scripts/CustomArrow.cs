@@ -26,6 +26,7 @@ public class CustomArrow : MonoBehaviour
 
     int collisions;
     PhysicMaterial physics_mat;
+    public int damage;
 
     private void Start()
     {
@@ -80,7 +81,10 @@ public class CustomArrow : MonoBehaviour
         collisions++;
 
         //Explode if bullet hits an enemy directly and explodeOnTouch is activated
-        if (collision.collider.CompareTag("Enemy") && explodeOnTouch) Explode();
+        if (collision.collider.CompareTag("Enemy") && explodeOnTouch)
+        {
+            Explode();
+        }
     }
 
     private void Setup()
