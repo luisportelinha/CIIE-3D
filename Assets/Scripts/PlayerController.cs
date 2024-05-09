@@ -59,9 +59,10 @@ public class PlayerController : MonoBehaviour
     public float airForwardForce;
 
     Vector3 moveDirection;
-
-    public float radioApertura = 2f; // Radio de apertura de las puertas
-    LayerMask mask;
+    
+    [Header("Doors Check")]
+    public float radioApertura = 6f; // Radio de apertura de las puertas
+    public LayerMask mask;
 
     void Awake()
     {
@@ -118,9 +119,7 @@ public class PlayerController : MonoBehaviour
                 {
                     // Cambiar el estado de la puerta
                     doorCollider.GetComponent<RotateDoor>().changeDoorState();
-                }
-
-                if (doorCollider.CompareTag("FinalDoor"))
+                } else if (doorCollider.CompareTag("FinalDoor"))
                 {
                     // Cambiar el estado de la puerta
                     doorCollider.GetComponent<RiseFinalDoor>().changeDoorState();
