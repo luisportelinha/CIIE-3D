@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
     [Header("Portals Check")]
     public LayerMask maskPortal;
 
+    public GameController gameController;
+
 
     void Awake()
     {
@@ -136,9 +138,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Portal")){
-            Debug.Log("Portal");
-            //AQUI VA LO DE CAMBIAR A LA ESCENA DEL MUNDO 2
-            
+            gameController.PasarEscena();
         }
         if ((other.CompareTag("Damagexs10") || other.CompareTag("Damage10") || other.CompareTag("Damagexs40")) && !isTakingDamage)
         {

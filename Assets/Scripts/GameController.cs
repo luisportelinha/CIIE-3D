@@ -22,23 +22,34 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void CambiarEscena0()
+    public void CambiarEscena(int escena)
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(escena);
     }
 
-    public void CambiarEscena1()
+    public void Salir()
     {
-        SceneManager.LoadScene(1);
+        Debug.Log("Saliendo del juego");
+        //Application.Quit();
     }
 
-    public void CambiarEscena2()
+    public void abrirOpciones()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadSceneAsync(4, LoadSceneMode.Additive);
     }
 
-    public void CambiarEscena3()
+    public void cerrarOpciones()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.UnloadSceneAsync(4);
+    }
+
+    public void abrirPausa()
+    {
+        SceneManager.LoadSceneAsync(5, LoadSceneMode.Additive);
+    }
+
+    public void cerrarPausa()
+    {
+        SceneManager.UnloadSceneAsync(5);
     }
 }

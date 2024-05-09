@@ -16,6 +16,7 @@ TagManager:
   - Damage10
   - Damagexs10
   - Damagexs40
+  - Portal
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - UI
   - Ground
   - RayCast
-  - 
+  - Portal
   - 
   - 
   - 

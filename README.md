@@ -26,3 +26,10 @@ Partículas: https://assetstore.unity.com/packages/vfx/particles/legacy-particle
 Dungeons: https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535
 
 el ultimo aun no esta metido pero vaya no tiene mala pinta
+
+
+ERRORES DE LO QUE DEJO SUBIDO:
+
+No para el listener de eventos de la pantalla principal ni el de pause bien cuando entra en opciones 
+
+No esta el brillo puesto para todas las pantallas, solo para la de configuraciones, tengo q mirar como ponerlo
