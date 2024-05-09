@@ -17,6 +17,8 @@ TagManager:
   - Damagexs10
   - Damagexs40
   - Portal
+  - bullet
+  - weapon
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - Ground
   - RayCast
   - Portal
-  - 
-  - 
+  - Player
+  - UnderwaterGround
   - 
   - 
   - 
