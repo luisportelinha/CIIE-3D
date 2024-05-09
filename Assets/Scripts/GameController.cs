@@ -16,9 +16,29 @@ public class GameController : MonoBehaviour
     {
         
     }
+    
+    public void PasarEscena()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
-    public void CambiarEscena()
+    public void CambiarEscena0()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void CambiarEscena1()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void CambiarEscena2()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void CambiarEscena3()
+    {
+        SceneManager.LoadScene(3);
     }
 }

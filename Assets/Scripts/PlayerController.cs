@@ -61,8 +61,12 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
     
     [Header("Doors Check")]
-    public float radioApertura = 6f; // Radio de apertura de las puertas
-    public LayerMask mask;
+    public float radioApertura = 10f; // Radio de apertura de las puertas
+    public LayerMask maskDoors;
+
+    [Header("Portals Check")]
+    public LayerMask maskPortal;
+
 
     void Awake()
     {
@@ -110,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Detectar todas las puertas dentro del radio de apertura
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radioApertura, mask);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, radioApertura, maskDoors);
 
             // Iterar sobre las puertas detectadas
             foreach (Collider doorCollider in hitColliders)
@@ -131,6 +135,11 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Portal")){
+            Debug.Log("Portal");
+            //AQUI VA LO DE CAMBIAR A LA ESCENA DEL MUNDO 2
+            
+        }
         if ((other.CompareTag("Damagexs10") || other.CompareTag("Damage10") || other.CompareTag("Damagexs40")) && !isTakingDamage)
         {
             StartCoroutine(TakeDamageOverTime(other));

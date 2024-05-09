@@ -4588,9 +4588,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 327807310}
     m_Modifications:
+    - target: {fileID: 1047777739120004, guid: 4047ab01be7298e4e827f73bf31ba088, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164220603921578, guid: 4047ab01be7298e4e827f73bf31ba088, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1870342349812024, guid: 4047ab01be7298e4e827f73bf31ba088, type: 3}
       propertyPath: m_Name
       value: TownGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870342349812024, guid: 4047ab01be7298e4e827f73bf31ba088, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1870342349812024, guid: 4047ab01be7298e4e827f73bf31ba088, type: 3}
       propertyPath: m_TagString
@@ -8338,6 +8350,9 @@ MonoBehaviour:
   y: 0
   airForwardForce: 10000
   radioApertura: 3.08
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &1584183841 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b86731191fe07f447a249f5195ecc86e, type: 3}
@@ -9866,7 +9881,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1194267263247048, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1194267263247048, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
       propertyPath: m_TagString
@@ -10391,6 +10406,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1933340612}
     m_Modifications:
+    - target: {fileID: 1194267263247048, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1194267263247048, guid: f2d2c05f673efab46bbfa275f8aafe86, type: 3}
       propertyPath: m_TagString
       value: Door
