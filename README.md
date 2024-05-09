@@ -25,6 +25,21 @@ https://assetstore.unity.com/packages/vfx/shaders/aquas-lite-built-in-render-pip
 Partículas: https://assetstore.unity.com/packages/vfx/particles/legacy-particle-pack-73777
 Dungeons: https://assetstore.unity.com/packages/3d/environments/dungeons/ultimate-low-poly-dungeon-143535
 
+arco
+https://assetstore.unity.com/packages/3d/props/weapons/elven-long-bow-17728
+
+roca
+https://assetstore.unity.com/packages/2d/textures-materials/rock-textures-4k-179128
+
+npc 
+https://assetstore.unity.com/packages/3d/characters/humanoids/lowpoly-medieval-priest-free-medieval-fantasy-series-164796
+
+Dialogue Editor
+https://assetstore.unity.com/packages/tools/utilities/dialogue-editor-168329
+
+
+
+
 el ultimo aun no esta metido pero vaya no tiene mala pinta
 
 

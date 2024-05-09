@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -92,7 +94,6 @@ public class PlayerController : MonoBehaviour
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
 
         MyInput();
-        //if (!lockLook) Look();
         SpeedControl();
 
         // handle drag
@@ -263,4 +264,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.AddForce(dir * force, ForceMode.Impulse);
     }
+
+
 }
