@@ -92,8 +92,8 @@ public class Enemy_ranged : Enemy
         }  
         if(atacando){
             agente.enabled = false;
-        }
-    }
+        }
+    }
 
 
 }

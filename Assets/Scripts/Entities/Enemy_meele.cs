@@ -27,8 +27,8 @@ public class Enemy_meele : Enemy
 
         animator.SetBool("walk", false);
         animator.SetBool("run", false);
-        animator.SetBool("attack", true); 
-    }
+        animator.SetBool("attack", true); 
+    }
 
-    
+    
 }

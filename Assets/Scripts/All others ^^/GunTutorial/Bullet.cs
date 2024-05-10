@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public Transform cam;
     public float speed;
     public float spread;
-    
+    public int damage = 20;
 
     private void Awake()
     {
@@ -22,5 +22,12 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         transform.Translate(cam.forward * speed * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider other){
+        if(other.CompareTag("Enemy")){
+            other.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }

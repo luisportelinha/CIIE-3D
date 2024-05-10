@@ -22,9 +22,10 @@ public class Enemy : MonoBehaviour
     public float anguloAtaque = 15.0f;
     public int damage = 5;
     public int health = 100;
-    int currentHealth;
-
+    protected int currentHealth;
+    
     public HealthBar healthBar;
+    
     public GameObject target;
     public NavMeshAgent agente;
 
@@ -32,11 +33,12 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         animator = GetComponent<Animator>();
+        agente = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = GameObject.Find("Player");
         currentHealth = health;
     }
 
-    public void patrullar(){
+    protected virtual void patrullar(){
         agente.enabled = false;
         animator.SetBool("run", false);
 
@@ -58,6 +60,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected virtual void setRun(){
+        animator.SetBool("walk", false);
+        animator.SetBool("attack", false);
+        animator.SetBool("run", true);
+    }
+
     public void perseguir(){
         var lookPos = target.transform.position - transform.position;
         lookPos.y = 0;
@@ -65,9 +73,7 @@ public class Enemy : MonoBehaviour
 
         agente.enabled = true;
         
-        animator.SetBool("walk", false);
-        animator.SetBool("attack", false);
-        animator.SetBool("run", true);
+        setRun();
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Run")){
             agente.SetDestination(target.transform.position);
@@ -119,7 +125,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount){
+    public virtual void TakeDamage(int amount){
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
         print($"Recibido {amount} de daño, salud restante: {currentHealth}");
@@ -128,9 +134,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die(){
+
+    protected void Die(){
         print("enemigo muerto");
-        Destroy(gameObject);
+        animator.Play("Death");
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame
