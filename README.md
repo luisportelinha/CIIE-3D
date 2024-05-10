@@ -42,4 +42,15 @@ sonidos zombies:
 https://freesound.org/people/MisterKidX/sounds/454833/
 https://freesound.org/people/rezidentevil/sounds/396046/
 
+
+musica win:https://freesound.org/people/AudioCoffee/sounds/725594/
+musicaderrota:https://freesound.org/people/SiriusParsec/sounds/583815/
+
+
+
 lo de la muerte esta con la L en pausecontroller, debe ir cuando la vida sea 0 en player controller era para probar
+
+para cambiar de escena, en los botones, o en el onTigger,
+botones -> instanceGC.cambiarEscena() con el indice y tal
+con los portales es en el playerController, con gamecontroller.cambiarEscena(), (ahi ya esta declarado como instancia por eso ponerlo asi) lo dejo escrito por si os poneis con los portales de los demas mundos o algo asi
+
