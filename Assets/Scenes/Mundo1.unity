@@ -8441,7 +8441,7 @@ MonoBehaviour:
   maskPortal:
     serializedVersion: 2
     m_Bits: 256
-  gameController: {fileID: 0}
+  gameController: {fileID: 757344649}
 --- !u!95 &1584183841 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b86731191fe07f447a249f5195ecc86e, type: 3}

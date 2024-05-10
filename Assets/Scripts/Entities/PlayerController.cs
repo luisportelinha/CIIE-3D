@@ -167,14 +167,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+// Para controlar el daño del agua
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Damagexs10"))
-        {
-            StopCoroutine(TakeDamageOverTime(other));
-            isTakingDamage = false;
-        }
-
         if (other.CompareTag("Damagexs40"))
         {
             StopCoroutine(TakeDamageOverTime(other));
@@ -187,11 +182,6 @@ public class PlayerController : MonoBehaviour
         isTakingDamage = true;
         while (isTakingDamage)
         {
-            if (other.CompareTag("Damagexs10"))
-            {
-                currentHealth -= 10;
-                healthBar.SetHealth(currentHealth);
-            }
 
             if (other.CompareTag("Damagexs40"))
             {
