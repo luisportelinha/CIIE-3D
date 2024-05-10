@@ -17,7 +17,7 @@ public class Enemy_meele : Enemy
         rangoAtaque = 1;
         anguloVision = 90.0f;
         anguloAtaque = 45.0f;
-        damage = 20;
+        damage = 70;
         health = 200;
         healthBar.SetMaxHealth(health);
     }

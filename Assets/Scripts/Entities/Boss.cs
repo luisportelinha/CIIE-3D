@@ -21,9 +21,9 @@ public class Boss : Enemy
         rangoVision = 12; 
         rangoAgresividad = 16;
         velocidadCorrer = 5f;
-        rangoAtaque = 2;
+        rangoAtaque = 2.5f;
         anguloVision = 120.0f;
-        anguloAtaque = 90.0f;
+        anguloAtaque = 30.0f;
         damage = 100;
         health = 1000;
         currentHealth = health;
