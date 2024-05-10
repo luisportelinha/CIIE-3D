@@ -125,7 +125,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(int amount){
+    public virtual void TakeDamage(int amount){                           //Funcion encargada de manejar el recibir daño de distintas fuentes
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
         print($"Recibido {amount} de daño, salud restante: {currentHealth}");
@@ -135,7 +135,7 @@ public class Enemy : MonoBehaviour
     }
 
 
-    protected void Die(){
+    protected void Die(){                                                   //Activa el estado de death y destruye el cuerpo al pasar 5 segundos
         print("enemigo muerto");
         animator.Play("Death");
         Destroy(gameObject, 5f);

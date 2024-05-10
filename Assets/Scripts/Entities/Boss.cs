@@ -31,7 +31,7 @@ public class Boss : Enemy
         posicionInicial = transform.position;
     }
 
-    protected override void patrullar(){
+    protected override void patrullar(){                                    //El boss al patrullar vuelve a su casilla inicial si pierde el aggro.
         agente.enabled = true;
         animator.SetBool("run", true);
         agente.SetDestination(posicionInicial);
@@ -60,7 +60,7 @@ public class Boss : Enemy
         animator.SetBool("rangedAttack", true);
     }
 
-    protected void selectMeele(){
+    protected void selectMeele(){                                                 //Se elige de manera aleatoria el ataque a meele, en fase 2 hay mas ataques
         if(!fase2){
             ataque = Random.Range(0,2);
         }else{
@@ -79,7 +79,7 @@ public class Boss : Enemy
         
     }
 
-    private bool tryLongAttack(float distancia, float angleToTarget){
+    private bool tryLongAttack(float distancia, float angleToTarget){               //Si el enemigo se encuentra en una distancia de ataque largo correcta y angulo correcto, se ataca largo
         if ((distancia <= rangoAtaqueLargo && angleToTarget <= anguloAtaqueLargo)
                 && (distancia > rangoAtaqueLargoMinimo)) { 
 
@@ -92,7 +92,7 @@ public class Boss : Enemy
         return false;
     }
 
-    private bool tryMeeleAttack(float distancia, float angleToTarget){
+    private bool tryMeeleAttack(float distancia, float angleToTarget){              //Si el enemigo se encuentra en una distancia de ataque correcta y angulo correcto, se ataca
         if (distancia <= rangoAtaque && angleToTarget <= anguloAtaque) { 
             atacar();
             return true;
@@ -118,7 +118,7 @@ public class Boss : Enemy
 
             animator.SetBool("meeleAttack", false); 
 
-            if (Vector3.Distance(transform.position, target.transform.position) <= rangoVision){   // Si al acabar de golpear al objetivo está a rango de vision, se activa run
+            if (Vector3.Distance(transform.position, target.transform.position) <= rangoVision){        // Si al acabar de golpear al objetivo está a rango de vision, se activa run
                 animator.SetBool("run", true);
             }
         }
@@ -145,13 +145,13 @@ public class Boss : Enemy
 
             if(!tryLongAttack(distancia, angleToTarget)){                                   //Intenta realizar un ataque con rango
                 if(!tryMeeleAttack(distancia, angleToTarget)){                              //Intenta realizar un ataque con meele
-                    perseguir();                                                            //Si no realiza ningun ataque te persigue
+                    perseguir();                                                            //Si no realiza ningun ataque se persigue y se pone atacando a false
                     atacando = false;
                 }
             }
 
         }  
-        if(atacando){
+        if(atacando){                                                                       //Si se está atacando, se desactiva el agente de navegación
             agente.enabled = false;
         }
     }
@@ -160,8 +160,9 @@ public class Boss : Enemy
         currentHealth -= amount;
         healthBar.SetHealth(currentHealth);
         print($"Recibido {amount} de daño, salud restante: {currentHealth}");
-        if ((currentHealth <= health * 0.5) && (fase2 == false)){
+        if ((currentHealth <= health * 0.5) && (fase2 == false)){                           //Cuando la salud actual del jefe baja del 50% por primera vez entra en la fase 2
             fase2 = true;
+            damage = 200;
             animator.SetBool("fase2", true);
             animator.Play("Fase 2");
         }
