@@ -155,13 +155,13 @@ MonoBehaviour:
     m_Bits: 64
   bounciness: 0
   useGravity: 1
-  explosionDamage: 40
-  explosionRange: 1
-  explosionForce: 0
+  explosionDamage: 20
+  explosionRange: 2
+  explosionForce: 0.1
   maxCollisions: 4
   maxLifetime: 4
   explodeOnTouch: 1
-  damage: 30
+  damage: 40
 --- !u!114 &1554921875800991327
 MonoBehaviour:
   m_ObjectHideFlags: 0
