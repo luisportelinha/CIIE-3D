@@ -48,14 +48,3 @@ musicaderrota:https://freesound.org/people/SiriusParsec/sounds/583815/
 musica3: https://freesound.org/people/cantonbecker/sounds/547634/
 musica2: https://freesound.org/people/Jim-Bretherick/sounds/699865/
 musica1:morriña
-
-
-
-lo de la muerte esta con la L en pausecontroller, debe ir cuando la vida sea 0 en player controller era para probar
-
-para cambiar de escena, en los botones, o en el onTigger,
-botones -> instanceGC.cambiarEscena() con el indice y tal
-con los portales es en el playerController, con gamecontroller.cambiarEscena(), (ahi ya esta declarado como instancia por eso ponerlo asi) lo dejo escrito por si os poneis con los portales de los demas mundos o algo asi
-
-errores que vi:
-mas enemigos(con spawner), cambiar fuerza lanzar arco, nombre del juego, shift para esprintar

@@ -1255,8 +1255,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD -> Moverse\n\nEspacio -> Saltar\n\nE -> Abrir puertas\n\nMovimiento
-    del raton para mover la c\xE1mara\n\nESC -> Pause\n\n"
+  m_text: 'WASD y raton -> Moverse y movimiento camara
+
+
+    Espacio -> Saltar
+
+
+    E
+    -> Abrir puertas y recoger objetos
+
+
+    F -> Hablar con los magos
+
+
+    Q ->
+    Soltar el arco
+
+
+    ESC -> Pause
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
