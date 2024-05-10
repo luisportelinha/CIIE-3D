@@ -9,6 +9,8 @@ public class Boss : Enemy
     private int ataque;
     private Vector3 posicionInicial;
 
+    public InstanceGC gamecontroller;
+
     private float rangoAtaqueLargoMinimo = 8;
     private float rangoAtaqueLargo = 10;
     private float anguloAtaqueLargo = 25.0f;
@@ -18,13 +20,14 @@ public class Boss : Enemy
         // Configuraciones específicas de boss
         rangoVision = 12; 
         rangoAgresividad = 16;
-        velocidadCorrer = 2.5f;
-        rangoAtaque = 3;
+        velocidadCorrer = 5f;
+        rangoAtaque = 2;
         anguloVision = 120.0f;
-        anguloAtaque = 25.0f;
+        anguloAtaque = 90.0f;
         damage = 100;
         health = 1000;
         currentHealth = health;
+        healthBar.SetMaxHealth(health);
         posicionInicial = transform.position;
     }
 
@@ -163,7 +166,10 @@ public class Boss : Enemy
             animator.Play("Fase 2");
         }
         if (currentHealth <= 0){
-            Die();
+            print("enemigo muerto");
+            animator.Play("Death");
+            Destroy(gameObject, 5f);
+            gamecontroller.CambiarEscena(7);
         }
         
     }
