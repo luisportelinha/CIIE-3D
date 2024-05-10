@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
     
     void Die(){
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         gameController.CambiarEscena(6);
     }
 
