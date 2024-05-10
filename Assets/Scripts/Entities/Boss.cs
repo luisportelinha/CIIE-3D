@@ -170,6 +170,8 @@ public class Boss : Enemy
             print("enemigo muerto");
             animator.Play("Death");
             Destroy(gameObject, 5f);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             gamecontroller.CambiarEscena(7);
         }
         
