@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1920, 1080, true);
         
     }
 
@@ -44,8 +45,7 @@ public class GameController : MonoBehaviour
 
     public void Salir()
     {
-        Debug.Log("Saliendo del juego");
-        //Application.Quit();
+        Application.Quit();
     }
 
     public void abrirOpciones()
