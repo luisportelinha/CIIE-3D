@@ -43,7 +43,7 @@ public class PickUpController : MonoBehaviour
         if (equipped && Input.GetKeyDown(KeyCode.Q)) Drop();
     }
 
-    private void PickUp()
+    public void PickUp()
     {
         equipped = true;
         slotFull = true;

@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     
     void Die(){
-        print("El jugador ha muerto.");
+        gameController.CambiarEscena(6);
     }
 
     void OnTriggerEnter(Collider other)

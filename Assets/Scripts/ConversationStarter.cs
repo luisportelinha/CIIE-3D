@@ -6,6 +6,7 @@ using UnityEngine;
 public class ConversationStarter : MonoBehaviour
 {
     [SerializeField] private NPCConversation conversation;
+    public PickUpController pickUpcontroller;
 
     private void OnTriggerStay(Collider other)
     {
@@ -16,6 +17,7 @@ public class ConversationStarter : MonoBehaviour
                 ConversationManager.Instance.StartConversation(conversation);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                pickUpcontroller.PickUp();
                
                 
             }
