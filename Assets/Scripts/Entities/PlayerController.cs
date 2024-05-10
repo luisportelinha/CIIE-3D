@@ -140,6 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     
     void Die(){
+        Cursor.lockState = CursorLockMode.None;
         gameController.CambiarEscena(6);
     }
 
