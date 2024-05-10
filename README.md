@@ -37,14 +37,9 @@ https://assetstore.unity.com/packages/3d/characters/humanoids/lowpoly-medieval-p
 Dialogue Editor
 https://assetstore.unity.com/packages/tools/utilities/dialogue-editor-168329
 
+mute: https://icon-icons.com/es/icono/mute/64983
+sonidos zombies:
+https://freesound.org/people/MisterKidX/sounds/454833/
+https://freesound.org/people/rezidentevil/sounds/396046/
 
-
-
-el ultimo aun no esta metido pero vaya no tiene mala pinta
-
-
-ERRORES DE LO QUE DEJO SUBIDO:
-
-No para el listener de eventos de la pantalla principal ni el de pause bien cuando entra en opciones 
-
-No esta el brillo puesto para todas las pantallas, solo para la de configuraciones, tengo q mirar como ponerlo
+lo de la muerte esta con la L en pausecontroller, debe ir cuando la vida sea 0 en player controller era para probar

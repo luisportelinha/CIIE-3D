@@ -60,13 +60,13 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection;
     
     [Header("Doors Check")]
-    public float radioApertura = 10f; // Radio de apertura de las puertas
+    public float radioApertura = 5f; // Radio de apertura de las puertas
     public LayerMask maskDoors;
 
     [Header("Portals Check")]
     public LayerMask maskPortal;
 
-    public GameController gameController;
+    public InstanceGC gameController;
 
 
     void Awake()

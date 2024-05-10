@@ -43,6 +43,22 @@ public class Pausa : MonoBehaviour
                 gameController.cerrarPausa();     
             }
         }
+
+        // Si se presiona la tecla L se cambia a la escena 6(CUANDO SE MUERE VAYA)
+        if(Input.GetKeyDown(KeyCode.L)){
+            Time.timeScale = 1;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            gameController.CambiarEscena(6);
+        }
+
+        // Si se presiona la V se cambia a la escena 7(CUANDO SE GANA VAYA)
+        if(Input.GetKeyDown(KeyCode.V)){
+            Time.timeScale = 1;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            gameController.CambiarEscena(7);
+        }
         
     }
 
@@ -54,4 +70,6 @@ public class Pausa : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         gameController.CambiarEscena(0);
     }
+
+
 }
