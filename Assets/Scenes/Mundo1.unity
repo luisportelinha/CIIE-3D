@@ -19564,6 +19564,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5606596952158091810, guid: 3ae727560946b4b40b260b35bdd03ad8, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606596952158091810, guid: 3ae727560946b4b40b260b35bdd03ad8, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606596952158091810, guid: 3ae727560946b4b40b260b35bdd03ad8, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606596952158091810, guid: 3ae727560946b4b40b260b35bdd03ad8, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6117413410074597215, guid: 3ae727560946b4b40b260b35bdd03ad8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20222,6 +20238,10 @@ PrefabInstance:
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 1584183839}
+    - target: {fileID: 8905202847032697605, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
+      propertyPath: upwardForce
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20310,11 +20330,11 @@ PrefabInstance:
       objectReference: {fileID: 3460883393875371476}
     - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
       propertyPath: walkSpeed
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
       propertyPath: sprintSpeed
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
       propertyPath: gameController
