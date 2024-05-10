@@ -1978,11 +1978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.772644
+      value: -4.4819946
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6116371
+      value: 1.0850029
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9742,11 +9742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.6766357
+      value: -4.386
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6116371
+      value: 1.085
       objectReference: {fileID: 0}
     - target: {fileID: 4251879001931670, guid: e965607d197150b43a6dabdf25ed1ac5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20301,9 +20301,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2848424279942165379}
     - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
+      propertyPath: jumpForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 3460883393875371476}
+    - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
+      propertyPath: walkSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
+      propertyPath: sprintSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1277690436729662110, guid: 8deb02941e3f6fc43a4f01c1ef7d7ebb, type: 3}
       propertyPath: gameController
       value: 
