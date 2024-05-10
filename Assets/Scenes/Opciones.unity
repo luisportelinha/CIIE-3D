@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 94752949}
   - component: {fileID: 94752948}
   - component: {fileID: 94752946}
-  - component: {fileID: 94752947}
   m_Layer: 5
   m_Name: AjustesController
   m_TagString: Untagged
@@ -157,20 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 2131427423}
   resolutionDropdown: {fileID: 0}
---- !u!114 &94752947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 94752945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aedeb172194673418c95d84546f3f33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dropdown: {fileID: 1193740466}
-  calidad: 3
 --- !u!114 &94752948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,8 +1464,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPCIONES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1540,7 +1525,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -29.484863, w: 0}
+  m_margin: {x: 0, y: 0, z: -36.27778, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1994,7 +1979,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 94752947}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: QualityControler, Assembly-CSharp
         m_MethodName: AjustarCalidad
         m_Mode: 1
@@ -2127,8 +2112,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Calidad Imagen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3073,8 +3058,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3209,8 +3194,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3381,8 +3366,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3700,8 +3685,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 65be5679c14e9fd4086ed8e34c926354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
