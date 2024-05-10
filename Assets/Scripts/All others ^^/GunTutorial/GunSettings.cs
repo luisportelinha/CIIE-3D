@@ -25,8 +25,6 @@ public class GunSettings : MonoBehaviour
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
-            //stop look function (player)
-            fpsMovement.lockLook = true;
 
             //stop shooting
             gun.shootingEnabled = false;
@@ -40,8 +38,6 @@ public class GunSettings : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
-            //enable look function (player)
-            fpsMovement.lockLook = false;
 
             //enable shooting
             gun.shootingEnabled = true;

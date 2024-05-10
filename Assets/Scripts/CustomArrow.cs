@@ -95,7 +95,7 @@ public class CustomArrow : MonoBehaviour
         physics_mat.frictionCombine = PhysicMaterialCombine.Minimum;
         physics_mat.bounceCombine = PhysicMaterialCombine.Maximum;
         //Assign material to collider
-        GetComponent<CapsuleCollider>().material = physics_mat;
+        GetComponent<SphereCollider>().material = physics_mat;
 
         //Set gravity
         rb.useGravity = useGravity;

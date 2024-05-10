@@ -7,57 +7,51 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    [Header("Basics")]
     public Transform playerCam;
     public Transform orientation;
     Rigidbody rb;
     public Animator animator;
 
     [Header("Movement")]
-    public bool lockLook;
+    public float walkSpeed;
+    public float sprintSpeed;
     private float xRotation;
     private float sensitivity = 50f;
     private float sensMultiplier = 1f;
-
-
-    public float energy;
-    public int health, regen, currentHealth;
-    int maxHealth;
-    bool fighting;
-    bool isTakingDamage;
-
-    public HealthBar healthBar;
+    float horizontalInput;
+    float verticalInput;
+    public float x, y;
+    bool sprinting;
     public Vector3 inputVector;
     public float moveSpeed;
-    public float baseSpeed = 20;
-    private float startBaseSpeed;
-
     public float groundDrag;
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
+    public float airForwardForce;
+    Vector3 moveDirection;
 
+    [Header("Health")]
+    public int health, regen, currentHealth;
+    int maxHealth;
+    bool fighting;
+    bool isTakingDamage;
+    public HealthBar healthBar;
 
-    [HideInInspector] public float walkSpeed;
-    [HideInInspector] public float sprintSpeed;
 
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
     bool grounded;
 
-    float horizontalInput;
-    float verticalInput;
-    public float x, y;
-    bool sprinting;
     //air control
-    public float airForwardForce;
-
-    Vector3 moveDirection;
     
     [Header("Doors Check")]
     public float radioApertura = 5f; // Radio de apertura de las puertas
@@ -72,7 +66,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        startBaseSpeed = baseSpeed;
+        moveSpeed = walkSpeed;
         maxHealth = health;
         currentHealth = health;
         healthBar.SetMaxHealth(maxHealth);
@@ -219,10 +213,19 @@ public class PlayerController : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         // on ground
-        if (grounded)
+        if (grounded) {
+            if (Input.GetKey(sprintKey))
+            {
+                moveSpeed = sprintSpeed;
+            }
+            else
+            {
+                moveSpeed = walkSpeed;
+            }
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
-        // in air
+            // in air
+        }
         else if (!grounded)
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
     }
