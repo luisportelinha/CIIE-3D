@@ -12555,15 +12555,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1437399901082692351, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 810.841
+      value: 810.843
       objectReference: {fileID: 0}
     - target: {fileID: 1437399901082692351, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.21
+      value: 50.197
       objectReference: {fileID: 0}
     - target: {fileID: 1437399901082692351, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 292.7349
+      value: 292.741
       objectReference: {fileID: 0}
     - target: {fileID: 1437399901082692351, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12596,6 +12596,10 @@ PrefabInstance:
     - target: {fileID: 7728495467525355538, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
       propertyPath: m_Name
       value: Stone 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728495467525355538, guid: 2cbbe5013c3f6d4428117184c5368269, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12751,7 +12755,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2100189183204178250, guid: b0f94822290b267459ab8ba042ae6684, type: 3}
+    - {fileID: 4587654239340706671, guid: b0f94822290b267459ab8ba042ae6684, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -13050,6 +13056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraHolder 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2495311087910902575, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3357819611199550383, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
       propertyPath: player
       value: 
@@ -13096,6 +13106,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4731772679541514404, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8177054795062095779, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8905202847032697605, guid: 87f73fc453cef574895037b90b70aadb, type: 3}
